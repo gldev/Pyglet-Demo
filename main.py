@@ -5,7 +5,7 @@ from game import tile_set_loader
 
 window = pyglet.window.Window()
 
-sprite = pyglet.sprite.Sprite(img=tile_set_loader.image_part, x=400, y=300)
+sprite = pyglet.sprite.Sprite(img=tile_set_loader.image_part, x=0, y=0)
 
 @window.event
 def on_key_press(symbol, modifiers):
