@@ -3,9 +3,8 @@ import math
 
 
 def calculate_distance(p1, p2):
-	s = math.sqrt(math.pow(p2.x - p1.x)) + math.sqrt(math.pow(p2.y - p1.y)
+	s = math.sqrt(math.pow(p2.x - p1.x)) + math.sqrt(math.pow(p2.y - p1.y))
 	return s
-
 
 class PhysicalObject(pyglet.sprite.Sprite):
 	def __init__(self, *args, **kwargs):
@@ -21,8 +20,8 @@ class PhysicalObject(pyglet.sprite.Sprite):
 		self.event_handlers = []
 
 	def update(self, dt):
-		self.x += self.velocity_x * dt
-		self.y += self.velocity_y * dt
+		#self.x += self.velocity_x * dt
+		#self.y += self.velocity_y * dt
 
 		self.check_bounds()
 
@@ -32,6 +31,7 @@ class PhysicalObject(pyglet.sprite.Sprite):
 		min_y = -self.image.height / 2
 		max_x = 800 + self.image.width / 2
 		max_y = 600 + self.image.height / 2
+		print(f"min {min_x} x {self.x}")
 		if self.x < min_x:
 			self.x = max_x
 		if self.y < min_y:
