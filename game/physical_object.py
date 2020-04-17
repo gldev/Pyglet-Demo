@@ -29,17 +29,18 @@ class PhysicalObject(pyglet.sprite.Sprite):
 	def check_bounds(self):
 		min_x = -self.image.width / 2
 		min_y = -self.image.height / 2
-		max_x = 800 + self.image.width / 2
-		max_y = 600 + self.image.height / 2
-		print(f"min {min_x} x {self.x}")
+		max_x = 600 + self.image.width / 2
+		max_y = 800 + self.image.height / 2
+
+		print(f"Max x {max_x} Max y {max_y}")
 		if self.x < min_x:
-			self.x = max_x
-		if self.y < min_y:
-			self.y = max_y
-		if self.x > max_x:
 			self.x = min_x
-		if self.y > max_y:
+		if self.y < min_y:
 			self.y = min_y
+		if self.x > max_x:
+			self.x = max_x
+		if self.y > max_y:
+			self.y = max_y
 
 	def collides_with(self, other_object):
 
