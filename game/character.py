@@ -7,6 +7,8 @@ class Character(PhysicalObject):
 		image = kwargs.pop("image")
 		visible = kwargs.pop("visible", True)
 		speed = int(kwargs.pop("speed", 2.0))
+		x = int(kwargs.pop("x", 0.0))
+		y = int(kwargs.pop("y", 0.0))
 		super(Character, self).__init__(img=image, *args, **kwargs)
 		self.engine_sprite = pyglet.sprite.Sprite(img=image, *args, **kwargs)
 		self.engine_sprite.visible = visible
@@ -19,6 +21,8 @@ class Character(PhysicalObject):
 		# Tell the game handler about any event handlers
 		self.key_handler = key.KeyStateHandler()
 		self.event_handlers = [self, self.key_handler]
+		self.x = x
+		self.y = y
 
 	def update(self, dt):
 		super(Character, self).update(dt)

@@ -38,6 +38,7 @@ tile_set_image = pyglet.resource.image("tile_set.png")
 tile_set_image = apply_color_key(tile_set_image)
 
 image_part = tile_set_image.get_region(16, 16*15, TILE_SIZE, TILE_SIZE)
+horizontal_wall = tile_set_image.get_region(16*2, 16*4, TILE_SIZE, TILE_SIZE)
 
 # Batch the sprites
 #background = pyglet.graphics.Batch()
